@@ -1,0 +1,30 @@
+ManifestFileVersion: 0
+CRC: 1233026465
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d4a444c70a5fe920318886226132477a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: cd1aca0060b7f3b15fcf195fdca57554
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: de6dd361672760b4ca43d18edef41e03, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Fonts/CascadiaMono-Regular.ttf
+- Assets/Fonts/FontLib.asset
+Dependencies: []
