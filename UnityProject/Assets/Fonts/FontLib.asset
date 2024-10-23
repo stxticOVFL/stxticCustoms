@@ -92,7 +92,9 @@ MonoBehaviour:
     turkish: {fileID: 0}
     turkishFontMats: []
   - english: {fileID: 11400000, guid: ef4ae971506217f42861f341838985f1, type: 2}
-    englishFontMats: []
+    englishFontMats:
+    - {fileID: -8731878287975953930, guid: ef4ae971506217f42861f341838985f1, type: 2}
+    - {fileID: 2100000, guid: 00169dc9e5a8f8f419c779532440cbcb, type: 2}
     french: {fileID: 0}
     frenchFontMats: []
     italian: {fileID: 0}

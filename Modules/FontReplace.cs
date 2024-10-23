@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using MelonLoader;
 using NeonLite;
 using System;
@@ -122,14 +122,15 @@ namespace stxticCustoms.Modules
             DoQuickReplacement(__instance._silverMedalTime);
             DoQuickReplacement(__instance._aceMedalTime);
             DoQuickReplacement(__instance._levelBestTime);
+            //var id = fontLib.GetBaseId(__instance._levelBestTime.font);
+            //__instance._levelBestTime.fontSharedMaterial = fontLib.textMeshProFontSets[id].englishFontMats[1];
         }
 
         [HarmonyPatch(typeof(MenuScreenResults), "OnSetVisible")]
-        [HarmonyPostfix]
+        [HarmonyPrefix]
         static void PostResults(MenuScreenResults __instance)
         {
             // hide shit idc about too
-            __instance._levelCompleteStatsText.transform.parent.localPosition = new(35, -15, 0);
             DoQuickReplacement(__instance._resultsScreenLevelTime);
             DoQuickReplacement(__instance._levelCompleteBestStatsText);
             DoQuickReplacement(__instance._levelCompleteStatsText);

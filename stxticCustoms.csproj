@@ -71,7 +71,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\AnimOverride.cs" />
     <Compile Include="Modules\FontReplace.cs" />
+    <Compile Include="Modules\NoPixels.cs" />
     <Compile Include="Modules\Lowercase.cs" />
     <Compile Include="Modules\PauseBG.cs" />
     <Compile Include="Modules\Colorization.cs" />

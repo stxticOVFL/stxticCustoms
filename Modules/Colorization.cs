@@ -8,8 +8,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static MelonLoader.MelonLogger;
 
 namespace stxticCustoms.Modules
 {
@@ -28,9 +30,14 @@ namespace stxticCustoms.Modules
         static MelonPreferences_Entry<Color> demonColor;
         static MelonPreferences_Entry<Color> demonFlame;
         static MelonPreferences_Entry<Color> demonFlame2;
-        
+
+        internal static MelonPreferences_Entry<Color> newBest;
+
         static readonly MethodInfo ogstage = AccessTools.Method(typeof(MenuScreenStaging), "OnSetVisible");
         static readonly MethodInfo ogresult = AccessTools.Method(typeof(MenuScreenResults), "OnSetVisible");
+        static readonly MethodInfo oglbsbest = AccessTools.Method(typeof(LeaderboardScore), "SetNewBestScore");
+        static readonly MethodInfo oglilevel = AccessTools.Method(typeof(LevelInfo), "SetLevel");
+
 
         static void Setup()
         {
@@ -43,12 +50,20 @@ namespace stxticCustoms.Modules
             demonFlame = Settings.Add(stxticCustoms.h, "Color", "demonFlame", "demon flame color", null, new Color());
             demonFlame2 = Settings.Add(stxticCustoms.h, "Color", "demonFlame2", "demon flame bar color", null, new Color());
 
+            newBest = Settings.Add(stxticCustoms.h, "Color", "newBest", "new best color", null, new Color(0.925f, 0.753f, 0.388f, 1));
         }
         static void Activate(bool _)
         {
             stxticCustoms.Harmony.Patch(ogstage, prefix: Helpers.HM(ApplyBackColors));
-            stxticCustoms.Harmony.Patch(ogresult, prefix: Helpers.HM(ApplyBackColors));
+            var hm = Helpers.HM(ApplyBackColors);
+            hm.priority = Priority.Last;
+            stxticCustoms.Harmony.Patch(ogresult, postfix: hm);
+            stxticCustoms.Harmony.Patch(oglbsbest, prefix: Helpers.HM(LBSApplyNewBestColor));
+            stxticCustoms.Harmony.Patch(oglilevel, prefix: Helpers.HM(LIApplyNewBestColor));
         }
+
+        static void LBSApplyNewBestColor(LeaderboardScore __instance) => __instance.newBestScoreColor = newBest.Value;
+        static void LIApplyNewBestColor(LevelInfo __instance) => __instance.bestTimeColor = newBest.Value;
 
         static void ApplyBackColors(MenuScreen __instance)
         {
@@ -67,6 +82,9 @@ namespace stxticCustoms.Modules
                 {
                     color = (finishColor.Value * 2).Alpha(finishColor.Value.a)
                 };
+                var dt = results.transform.Find("Delta Time").GetComponent<TextMeshProUGUI>();
+                if (dt.color == Color.green) 
+                    dt.color = newBest.Value;
             }
         }
 

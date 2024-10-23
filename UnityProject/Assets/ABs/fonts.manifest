@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1233026465
+CRC: 473303164
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d4a444c70a5fe920318886226132477a
+    Hash: 62ab79e779c3ce1cf01d13e1bb20138b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: cd1aca0060b7f3b15fcf195fdca57554
+    Hash: c4e285a8d091ef903813cdb1fb0405fe
 HashAppended: 0
 ClassTypes:
 - Class: 21
@@ -14,6 +14,10 @@ ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
 - Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
   Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
@@ -23,8 +27,13 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 128
   Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Sprites/iconTimer.png
+- Assets/Animations/LevelCompleteAnim.controller
+- Assets/Animations/Timer and Medals.controller
 - Assets/Fonts/CascadiaMono-Regular.ttf
 - Assets/Fonts/FontLib.asset
 Dependencies: []
