@@ -1,3 +1,4 @@
 # stxticCustomizations
 An *extremely* quick and dirty mod for customizing my game.
-### No builds will be provided. 
+## Requires NL3.0.8+2.
+### Builds will sparingly be provided.
