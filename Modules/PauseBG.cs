@@ -35,7 +35,7 @@ namespace stxticCustoms.Modules
         }
         static void Activate(bool _)
         {
-            stxticCustoms.Harmony.Patch(ogstage, prefix: Helpers.HM(ApplyMatChanges));
+            Patching.AddPatch(ogstage, ApplyMatChanges, Patching.PatchTarget.Prefix);
         }
 
         static void ApplyMatChanges()

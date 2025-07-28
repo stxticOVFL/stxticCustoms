@@ -41,6 +41,10 @@
     <Reference Include="MelonLoader">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Neon White\MelonLoader\net35\MelonLoader.dll</HintPath>
     </Reference>
+    <Reference Include="NeonLite, Version=3.0.9.6, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Neon White\Mods\NeonLite.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -86,13 +90,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NeonLite3\NeonLite3.csproj">
-      <Project>{1de1e79a-01e5-48f7-b877-48836e3eb396}</Project>
-      <Name>NeonLite3</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fonts" />
+    <None Include=".editorconfig" />
+    <None Include="Resources\stxticcustoms" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\r.resx">

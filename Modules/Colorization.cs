@@ -31,13 +31,16 @@ namespace stxticCustoms.Modules
         static MelonPreferences_Entry<Color> demonFlame;
         static MelonPreferences_Entry<Color> demonFlame2;
 
+        static MelonPreferences_Entry<Color> healthTop;
+        static MelonPreferences_Entry<Color> healthBottom;
+
         internal static MelonPreferences_Entry<Color> newBest;
 
         static readonly MethodInfo ogstage = AccessTools.Method(typeof(MenuScreenStaging), "OnSetVisible");
         static readonly MethodInfo ogresult = AccessTools.Method(typeof(MenuScreenResults), "OnSetVisible");
         static readonly MethodInfo oglbsbest = AccessTools.Method(typeof(LeaderboardScore), "SetNewBestScore");
         static readonly MethodInfo oglilevel = AccessTools.Method(typeof(LevelInfo), "SetLevel");
-
+        static readonly MethodInfo ogpuisetup = AccessTools.Method(typeof(PlayerUI), "Setup");
 
         static void Setup()
         {
@@ -50,16 +53,21 @@ namespace stxticCustoms.Modules
             demonFlame = Settings.Add(stxticCustoms.h, "Color", "demonFlame", "demon flame color", null, new Color());
             demonFlame2 = Settings.Add(stxticCustoms.h, "Color", "demonFlame2", "demon flame bar color", null, new Color());
 
+            healthTop = Settings.Add(stxticCustoms.h, "Color", "healthTop", "health top", null, Color.red);
+            healthBottom = Settings.Add(stxticCustoms.h, "Color", "healthBottom", "health bottom", null, Color.blue);
+
             newBest = Settings.Add(stxticCustoms.h, "Color", "newBest", "new best color", null, new Color(0.925f, 0.753f, 0.388f, 1));
+
         }
         static void Activate(bool _)
         {
-            stxticCustoms.Harmony.Patch(ogstage, prefix: Helpers.HM(ApplyBackColors));
+            Patching.AddPatch(ogstage, ApplyBackColors, Patching.PatchTarget.Prefix);
             var hm = Helpers.HM(ApplyBackColors);
             hm.priority = Priority.Last;
-            stxticCustoms.Harmony.Patch(ogresult, postfix: hm);
-            stxticCustoms.Harmony.Patch(oglbsbest, prefix: Helpers.HM(LBSApplyNewBestColor));
-            stxticCustoms.Harmony.Patch(oglilevel, prefix: Helpers.HM(LIApplyNewBestColor));
+            Patching.AddPatch(ogresult, hm, Patching.PatchTarget.Postfix);
+            Patching.AddPatch(oglbsbest, LBSApplyNewBestColor, Patching.PatchTarget.Prefix);
+            Patching.AddPatch(oglilevel, LIApplyNewBestColor, Patching.PatchTarget.Prefix);
+            Patching.AddPatch(ogpuisetup, PostUIStart, Patching.PatchTarget.Postfix);
         }
 
         static void LBSApplyNewBestColor(LeaderboardScore __instance) => __instance.newBestScoreColor = newBest.Value;
@@ -88,15 +96,15 @@ namespace stxticCustoms.Modules
             }
         }
 
-        [HarmonyPatch(typeof(PlayerUI), "Start")]
-        [HarmonyPostfix]
-        static void PostUIStart(PlayerUI __instance)
+        static void PostUIStart(PlayerUI __instance, Material ___healthBarMat)
         {
             __instance.demonCounterNumberText.color = demonColor.Value;
             var bars = __instance.demonCounterHolder.transform.Find("BG Bars");
             bars.Find("BottomBar (3)").GetComponent<MeshRenderer>().material.color = demonFlame.Value;
             bars.Find("BottomBarDetail (4)").GetComponent<MeshRenderer>().material.color = demonFlame2.Value;
             bars.Find("BottomBarDetail (5)").GetComponent<MeshRenderer>().material.color = demonFlame2.Value;
+            ___healthBarMat.SetColor("_TopColor", healthTop.Value);
+            ___healthBarMat.SetColor("_BottomColor", healthBottom.Value);
         }
 
     }

@@ -63,9 +63,9 @@ namespace stxticCustoms.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] fonts {
+        internal static byte[] stxticcustoms {
             get {
-                object obj = ResourceManager.GetObject("fonts", resourceCulture);
+                object obj = ResourceManager.GetObject("stxticcustoms", resourceCulture);
                 return ((byte[])(obj));
             }
         }

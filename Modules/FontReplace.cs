@@ -147,6 +147,8 @@ namespace stxticCustoms.Modules
         [HarmonyPostfix]
         static void PostSetScore(LeaderboardScore __instance)
         {
+            if (!fontLib)
+                return;
             __instance._username.font = fontLib.fontSets[lbIndex.Value].english;
             __instance._username.resizeTextForBestFit = false;
             __instance._username.fontSize -= 1;
@@ -195,6 +197,8 @@ namespace stxticCustoms.Modules
         [HarmonyPostfix]
         static void PostButtonStart(Selectable __instance)
         {
+            if (!fontLib)
+                return;
             var text = __instance.transform.GetComponentInChildren<TextMeshProUGUI>();
             if (text && text.transform.parent == __instance.transform)
             {

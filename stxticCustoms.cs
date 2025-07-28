@@ -16,6 +16,7 @@ namespace stxticCustoms
         internal const string h = "stxtic Customization";
         internal static AssetBundle bundle;
         internal static event Action AfterLoad;
+        internal static bool invoked;
 
         public override void OnInitializeMelon()
         {
@@ -30,8 +31,14 @@ namespace stxticCustoms
         }
         public override void OnLateInitializeMelon()
         {
-            bundle = AssetBundle.LoadFromMemory(Resources.r.fonts);
+            bundle = AssetBundle.LoadFromMemory(Resources.r.stxticcustoms);
             AfterLoad?.Invoke();
+            invoked = true;
+
+#if DEBUG
+            // lmao
+            Singleton<Game>.Instance.PlayLevel("TUT_SHOOTINGRANGE", true);
+#endif
         }
     }
 }
