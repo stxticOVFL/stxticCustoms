@@ -1,7 +1,7 @@
 ManifestFileVersion: 0
-CRC: 4075639424
+CRC: 2289225225
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: fonts
+      Name: stxticcustoms
       Dependencies: {}

@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 2454234324
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fa609d479d16c480f9b34d7a7150bcc4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c4e285a8d091ef903813cdb1fb0405fe
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: de6dd361672760b4ca43d18edef41e03, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Sprites/iconTimer.png
+- Assets/Animations/Bourbon/LevelCompleteAnim.controller
+- Assets/Animations/Mizuki/LevelCompleteAnim.controller
+- Assets/Animations/Bourbon/Timer and Medals.controller
+- Assets/Animations/Mizuki/Timer and Medals.controller
+- Assets/Fonts/FontLib.asset
+Dependencies: []

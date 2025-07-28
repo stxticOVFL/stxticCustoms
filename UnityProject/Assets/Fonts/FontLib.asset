@@ -27,6 +27,20 @@ MonoBehaviour:
     portuguese: {fileID: 0}
     spanishLatin: {fileID: 0}
     turkish: {fileID: 0}
+  - english: {fileID: 12800000, guid: d9c6cae9a10624c4e8b29d91781d3da6, type: 3}
+    french: {fileID: 0}
+    italian: {fileID: 0}
+    german: {fileID: 0}
+    spanish: {fileID: 0}
+    russian: {fileID: 0}
+    japanese: {fileID: 0}
+    korean: {fileID: 0}
+    chineseSimp: {fileID: 0}
+    chinese: {fileID: 0}
+    polish: {fileID: 0}
+    portuguese: {fileID: 0}
+    spanishLatin: {fileID: 0}
+    turkish: {fileID: 0}
   textMeshProFontSets:
   - english: {fileID: 11400000, guid: aecfdc730b374214c96f87d98a3e2f3f, type: 2}
     englishFontMats:
@@ -129,6 +143,40 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 567ea1e227dd3d04eb4656bd6b12dc2f, type: 2}
     - {fileID: 6792797782186271341, guid: 3e5e7eab0bbc497459b09b6055af652b, type: 2}
     - {fileID: 2100000, guid: 567ea1e227dd3d04eb4656bd6b12dc2f, type: 2}
+    french: {fileID: 0}
+    frenchFontMats: []
+    italian: {fileID: 0}
+    italianFontMats: []
+    german: {fileID: 0}
+    germanFontMats: []
+    spanish: {fileID: 0}
+    spanishFontMats: []
+    russian: {fileID: 0}
+    russianFontMats: []
+    japanese: {fileID: 0}
+    japaneseFontMats: []
+    korean: {fileID: 0}
+    koreanFontMats: []
+    chineseSimp: {fileID: 0}
+    chineseSimpFontMats: []
+    chinese: {fileID: 0}
+    chineseFontMats: []
+    polish: {fileID: 0}
+    polishFontMats: []
+    portuguese: {fileID: 0}
+    portugueseFontMats: []
+    spanishLatin: {fileID: 0}
+    spanishLatinFontMats: []
+    turkish: {fileID: 0}
+    turkishFontMats: []
+  - english: {fileID: 11400000, guid: f5cd81e2e579bb64da40be21822f1101, type: 2}
+    englishFontMats:
+    - {fileID: 2100000, guid: 15d484f2d6b8ffe4f91d89960f4aa0cb, type: 2}
+    - {fileID: -1093987188604486037, guid: f5cd81e2e579bb64da40be21822f1101, type: 2}
+    - {fileID: 2100000, guid: 15d484f2d6b8ffe4f91d89960f4aa0cb, type: 2}
+    - {fileID: 2100000, guid: 15d484f2d6b8ffe4f91d89960f4aa0cb, type: 2}
+    - {fileID: -1093987188604486037, guid: f5cd81e2e579bb64da40be21822f1101, type: 2}
+    - {fileID: 2100000, guid: 15d484f2d6b8ffe4f91d89960f4aa0cb, type: 2}
     french: {fileID: 0}
     frenchFontMats: []
     italian: {fileID: 0}
